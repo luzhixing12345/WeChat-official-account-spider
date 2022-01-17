@@ -1,5 +1,5 @@
 
-
+import argparse
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import os
@@ -32,17 +32,21 @@ def main(url):
         if image.size['height']>50 and image.size['width']>50:
             doc.append(['image',img_name,image.location['y']])
     
-    print('get all pictures')
     doc.sort(key=lambda x:x[2])
     #print(doc)
     
     return title.text,publish_time.text,doc
 
-
         
-
 if __name__ == '__main__':
-    url = "https://mp.weixin.qq.com/s/kEmNwVk5DcacxPjLNxds8Q"
+    
+    parser = argparse.ArgumentParser()
+    parser.add_argument('url',type=str)
+    parser.add_argument('doc_name',type=str)
+    args = parser.parse_args()
+    print(args.url,args.doc_name)
+    #url = "https://mp.weixin.qq.com/s/ZH1nU8I8lGoORYo8SLXS_w"
+    #url = "https://mp.weixin.qq.com/s/kEmNwVk5DcacxPjLNxds8Q"
     opt = Options()
     opt.add_argument('--no-sandbox')                # 解决DevToolsActivePort文件不存在的报错
     opt.add_argument('--disable-gpu')               # 谷歌文档提到需要加上这个属性来规避bug
@@ -51,5 +55,6 @@ if __name__ == '__main__':
 
     browser = webdriver.Chrome(options=opt)
 
-    title,publish_time,doc = main(url)
-    make_doc(title,publish_time,doc)
+    title,publish_time,doc = main(args.url)
+    make_doc(title,publish_time,doc,args.doc_name)
+    print('finished')

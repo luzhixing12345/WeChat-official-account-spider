@@ -12,14 +12,16 @@ Word
 
 
 ## Requirement
-- selenium [Tutorial blog](https://blog.csdn.net/weixin_36279318/article/details/79475388)
+- selenium <br>
+  [Tutorial blog](https://blog.csdn.net/weixin_36279318/article/details/79475388)
   ```shell
   pip install selenium
   ```
-  [blog to install](https://www.cnblogs.com/lfri/p/10542797.html)
+  [blog to install](https://www.cnblogs.com/lfri/p/10542797.html)<br>
   check your Google browser's version, choose the closest version and download corresponding GoogleDriver from [position1](http://chromedriver.storage.googleapis.com/index.html) or [position2](https://npm.taobao.org/mirrors/chromedriver/).And then move `chromedriver.exe` under `C:\Program Files\Google\Chrome\Application` and the same folder with your python explainer. Then add `C:\Program Files\Google\Chrome\Application` to your `system path`.
 
-- docx [Main usage blog](https://www.cnblogs.com/gdjlc/p/11407587.html)
+- docx<br> 
+  [Main usage blog](https://www.cnblogs.com/gdjlc/p/11407587.html)
   ```shell
   pip install python-docx
   ```
@@ -29,9 +31,11 @@ Word
   ```
 
 ## Use 
+[video](https://www.bilibili.com/video/BV1La411B7Qd/)
 ```shell
-python spider.py
+python spider.py WEB-URL NAME.docx
 ```
+replace `WEB-URL` to your targeted url, NAME.docx to your document's name<br>
 All the images will be downloaded under folder `./images` and a word document will be created as `paper.docx`
 
 ## Attention
