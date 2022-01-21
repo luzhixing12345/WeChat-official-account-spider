@@ -1,7 +1,7 @@
 from docx import Document
 from docx.shared import Inches
 
-def make_doc(title,publish_time,doc):
+def make_doc(title,publish_time,doc,doc_name):
     document = Document()
 
     #添加标题，并设置级别，范围：0 至 9，默认为1
@@ -21,21 +21,4 @@ def make_doc(title,publish_time,doc):
             document.add_picture(doc[i][1],width=Inches(5.9))
         else:
             raise
-    # document.add_heading('Heading, level 1', level=1)
-    # document.add_paragraph('Intense quote', style='Intense Quote')
-
-    # #添加项目列表（前面一个小圆点）
-    # document.add_paragraph(
-    #     'first item in unordered list', style='List Bullet'
-    # )
-    # document.add_paragraph('second item in unordered list', style='List Bullet')
-
-    # #添加项目列表（前面数字）
-    # document.add_paragraph('first item in ordered list', style='List Number')
-    # document.add_paragraph('second item in ordered list', style='List Number')
-
-    # #添加图片
-    
-
-    #保存.docx文档
-    document.save('paper.docx')
+    document.save(doc_name)

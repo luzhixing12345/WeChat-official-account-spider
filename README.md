@@ -29,14 +29,13 @@ Word
   ```shell
   pip install urllib3
   ```
-
+- pyqt5 `pip install pyqt5`
 ## Use 
-[video](https://www.bilibili.com/video/BV1La411B7Qd/)
 ```shell
-python spider.py WEB-URL NAME.docx
+python GUI.py
 ```
-replace `WEB-URL` to your targeted url, NAME.docx to your document's name<br>
-All the images will be downloaded under folder `./images` and a word document will be created as `paper.docx`
+
+![image-20220121235656098](https://raw.githubusercontent.com/learner-lu/picbed/master/image-20220121235656098.png)
 
 ## Attention
 
