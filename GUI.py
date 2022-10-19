@@ -19,8 +19,8 @@ class graphic_interface(QWidget):
         self.url = QLineEdit()
         self.url.setPlaceholderText("输入网址")
 
-        self.doc_name = QLineEdit()
-        self.doc_name.setText("1.docx")
+        # self.doc_name = QLineEdit()
+        # self.doc_name.setText("1.docx")
 
         self.button = QPushButton()
         self.button.clicked.connect(self.run)
@@ -30,14 +30,14 @@ class graphic_interface(QWidget):
         
     
         self.layout_main.addRow("网址",self.url)
-        self.layout_main.addRow("文档名",self.doc_name)
+        # self.layout_main.addRow("文档名",self.doc_name)
         self.layout_main.addWidget(self.button)
         self.setLayout(self.layout_main)
 
     def run(self):
         url = self.url.text()
-        doc_name = self.doc_name.text()
-        self.THREAD = THREAD(url,doc_name)
+        # doc_name = self.doc_name.text()
+        self.THREAD = THREAD(url)
         self.THREAD._signal.connect(self.call_backlog)
         self.change_button_status()
    
